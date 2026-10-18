@@ -608,22 +608,27 @@ function App() {
         <div className="hero-content">
           <div className="availability">
             <span className="status-dot" />
-            VIDEO EDITOR &amp; GRAPHIC DESIGNER
+            VIDEO EDITOR &amp; GRAPHIC DESIGNER &amp; VISUAL STORYTELLER
           </div>
 
           <p className="eyebrow">
             CREATIVE MINDS. VISUAL STORIES.
           </p>
 
-          <h1>
-            I MAKE
-            <br />
-            IDEAS LOOK
-            <br />
-            <span className="outline-text">
-              UNFORGETTABLE.
-            </span>
-          </h1>
+          
+<h1 className="hero-animated-heading">
+  VIDEO EDITOR
+  <br />
+  &amp; GRAPHIC
+  <br />
+  <span className="outline-text">DESIGNER.</span>
+</h1>
+
+<p className="visual-storyteller">
+  <span className="storyteller-line" />
+  <span>VISUAL STORYTELLER</span>
+</p>
+
 
           <p className="hero-description">
             I'm Prem Kamal Nandigala, a video editor and graphic
