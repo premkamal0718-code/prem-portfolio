@@ -1,0 +1,403 @@
+/* =========================================
+   CHAPTER 4 — GRAPHIC DESIGN INTRODUCTION
+   Add this block to the bottom of src/App.css
+========================================= */
+.design-intro-section {
+  position: relative;
+  overflow: hidden;
+  background: #0b0b0b;
+  color: #f5f5f5;
+  padding: 100px 7%;
+}
+
+.design-intro-heading {
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.design-intro-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #303030;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: designIntroDivider 1s ease 300ms forwards;
+}
+
+.design-intro-section .section-kicker {
+  display: inline-block;
+  margin-bottom: 32px;
+  color: #c5ff41;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  animation: designIntroReveal 800ms ease both;
+}
+
+.design-intro-heading h2 {
+  margin: 0;
+  color: #f5f5f5;
+  font-size: clamp(38px, 5.2vw, 88px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -3px;
+  animation: designIntroReveal 900ms ease both;
+}
+
+.design-intro-heading h2 span {
+  display: inline-block;
+  color: #c5ff41;
+  animation: designIntroReveal 900ms ease 180ms both;
+}
+
+.design-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.65fr) 1.35fr;
+  gap: 60px;
+  padding-top: 50px;
+}
+
+.design-intro-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  animation: designIntroReveal 900ms ease 250ms both;
+}
+
+.design-intro-number {
+  color: #c5ff41;
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.design-intro-caption {
+  color: #929292;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.design-intro-content {
+  animation: designIntroReveal 900ms ease 400ms both;
+}
+
+.design-intro-content h3 {
+  margin: 0 0 28px;
+  color: #f5f5f5;
+  font-size: clamp(25px, 2.5vw, 44px);
+  line-height: 1.3;
+  font-weight: 750;
+}
+
+.design-intro-content h3 span {
+  color: #c5ff41;
+}
+
+.design-intro-content > p {
+  margin: 0 0 26px;
+  color: #a1a1aa;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.design-intro-specialties {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 38px;
+}
+
+.design-intro-specialties > div {
+  padding: 24px;
+  border: 1px solid #292929;
+  border-radius: 12px;
+  background: #111;
+  transition: border-color 300ms ease, transform 300ms ease, background 300ms ease;
+}
+
+.design-intro-specialties > div:hover {
+  transform: translateY(-5px);
+  border-color: #c5ff41;
+  background: #151515;
+}
+
+.design-intro-symbol {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #c5ff41;
+  font-size: 25px;
+}
+
+.design-intro-specialties h4 {
+  margin: 0 0 10px;
+  color: #f5f5f5;
+  font-size: 18px;
+}
+
+.design-intro-specialties p {
+  margin: 0;
+  color: #a1a1aa;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.design-intro-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+  color: #c5ff41;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: gap 250ms ease;
+}
+
+.design-intro-link:hover {
+  gap: 20px;
+}
+
+.design-intro-link span {
+  font-size: 18px;
+}
+
+@keyframes designIntroReveal {
+  from { opacity: 0; transform: translateY(28px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes designIntroDivider {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (max-width: 768px) {
+  .design-intro-section { padding: 75px 6%; }
+  .design-intro-heading { padding-bottom: 45px; }
+  .design-intro-section .section-kicker { margin-bottom: 24px; font-size: 11px; }
+  .design-intro-heading h2 { font-size: clamp(34px, 8vw, 56px); letter-spacing: -1.5px; }
+  .design-intro-grid { grid-template-columns: 1fr; gap: 35px; padding-top: 35px; }
+  .design-intro-number { font-size: 46px; }
+  .design-intro-content h3 { font-size: 28px; }
+  .design-intro-content > p { font-size: 15px; line-height: 1.9; }
+  .design-intro-specialties { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .design-intro-section *,
+  .design-intro-section *::before,
+  .design-intro-section *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* =================================
+   CONTACT CHAPTER — ADDITIVE STYLES
+   Append this to the bottom of App.css
+================================= */
+
+.contact-preview {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 7%;
+  background: #0b0b0b;
+  text-align: center;
+}
+
+.contact-preview .section-kicker {
+  display: block;
+  margin-bottom: 28px;
+  color: #c5ff41;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  animation: contactReveal 700ms ease both;
+}
+
+.contact-preview h2 {
+  margin: 0 auto 24px;
+  color: #f5f5f5;
+  font-size: clamp(52px, 8vw, 110px);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -4px;
+  animation: contactReveal 900ms ease 100ms both;
+}
+
+.contact-preview h2 span {
+  color: #c5ff41;
+}
+
+.contact-description {
+  max-width: 580px;
+  margin: 0 auto 32px;
+  color: #a1a1aa;
+  font-size: 16px;
+  line-height: 1.9;
+  animation: contactReveal 800ms ease 200ms both;
+}
+
+.contact-preview .button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 36px;
+  transition: transform 250ms ease;
+}
+
+.contact-preview .button-primary:hover {
+  transform: translateY(-4px);
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0 auto 36px;
+}
+
+.contact-detail-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 250px;
+  padding: 18px 20px;
+  border: 1px solid #292929;
+  border-radius: 12px;
+  background: #111;
+  color: #f5f5f5;
+  text-align: left;
+  text-decoration: none;
+  transition: border-color 250ms ease, transform 250ms ease;
+}
+
+.contact-detail-link:hover {
+  transform: translateY(-4px);
+  border-color: #c5ff41;
+}
+
+.contact-icon {
+  color: #c5ff41;
+  font-size: 27px;
+}
+
+.contact-detail-link small,
+.contact-detail-link strong {
+  display: block;
+}
+
+.contact-detail-link small {
+  margin-bottom: 5px;
+  color: #888;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.contact-detail-link strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact-arrow {
+  margin-left: auto;
+  color: #c5ff41;
+  font-size: 20px;
+}
+
+.instagram-qr-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: #c5ff41;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  animation: contactReveal 800ms ease 400ms both;
+}
+
+.instagram-qr {
+  display: block;
+  width: 160px;
+  height: 160px;
+  padding: 9px;
+  border-radius: 12px;
+  background: #fff;
+  object-fit: contain;
+  transition: transform 250ms ease;
+}
+
+.instagram-qr-link:hover .instagram-qr {
+  transform: scale(1.04);
+}
+
+.contact-email {
+  margin-top: 28px;
+  color: #999;
+  font-size: 13px;
+}
+
+@keyframes contactReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-preview {
+    padding: 80px 6%;
+  }
+
+  .contact-preview h2 {
+    font-size: clamp(42px, 10vw, 64px);
+    letter-spacing: -2px;
+  }
+
+  .contact-description {
+    font-size: 14px;
+  }
+
+  .contact-details {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-detail-link {
+    min-width: 0;
+  }
+
+  .instagram-qr {
+    width: 145px;
+    height: 145px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-preview *,
+  .contact-preview *::before,
+  .contact-preview *::after {
+    animation: none !important;
+    transition: none !important;
+    filter: none !important;
+  }
+}
